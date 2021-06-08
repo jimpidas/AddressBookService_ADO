@@ -17,11 +17,11 @@ namespace AddressBook_ADO
             employee.City = "Tsk";
             employee.State = "Tripura";
             employee.Email = "muktihk@gmail.com";
-            employee.AddressBookName ="book4";
-            employee.Type ="Family";
+            employee.AddressBookName = "book4";
+            employee.Type = "Family";
 
-            if (repo.AddEmployee(employee))
-            Console.WriteLine("Records added successfully");
+            if (repo.DeleteEmployee(employee))
+            Console.WriteLine("Records deleted successfully");
             Console.ReadKey();
         }
     }
