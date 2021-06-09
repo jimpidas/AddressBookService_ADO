@@ -59,7 +59,7 @@ namespace AddressBook_ADO
                 using (this.connection)
                 {
                     
-                    string query = @"select firstname from AddressBookDB where city = 'namrup' order by(firstname);";
+                    string query = @"select count(type),type from AddressBookDB group by type;";
                     SqlCommand cmd = new SqlCommand(query, this.connection);
                     this.connection.Open();
                     SqlDataReader dr = cmd.ExecuteReader();
@@ -67,7 +67,9 @@ namespace AddressBook_ADO
                     {
                         while (dr.Read())
                         {
-                            Console.WriteLine(dr.GetString(0));
+                            
+                            Console.WriteLine(dr.GetString(1));
+                            Console.WriteLine(dr.GetInt32(0));
                             System.Console.WriteLine("\n");
                         }
                     }
